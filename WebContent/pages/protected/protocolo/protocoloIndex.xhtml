@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:p="http://primefaces.org/ui">
+<h:body>
+	<ui:composition template="/pages/protected/templates/master.xhtml">
+		<ui:define name="divMain">
+			<h:form id="protocolosForm">
+				<p:dataTable id="protocolosTable" value="#{protocoloMB.allProtocolos}" var="protocolo" emptyMessage="#{bundle.noRecords}" paginator="true" rows="10"
+					paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+					rowsPerPageTemplate="5,10,15" widgetVar="protocolosTable">
+					<f:facet name="header">
+						 	 <p:outputPanel>
+								 <h:outputText value="Pesquisar:" />
+								 <h:inputText id="globalFilter" onkeyup="protocolosTable.filter()" />
+						 	 </p:outputPanel>
+					</f:facet>
+					<p:column filterBy="#{protocolo.user.name}">
+						<f:facet name="header">
+							<h:outputText value="#{bundle.usuario}" />
+						</f:facet>
+
+						<h:outputText value="#{protocolo.user.name}" />
+					</p:column>
+
+					
+					<p:column>
+						<p:commandButton value="#{bundle.detail}" icon="ui-icon-bullet" onclick="protocoloDetailDialogWidget.show();" update=":protocoloDetailDialogForm" >
+							<f:setPropertyActionListener target="#{protocoloMB.protocolo}" value="#{protocolo}" />
+						</p:commandButton> 
+						<p:spacer width="10px" />
+						<p:commandButton value="#{bundle.update}" icon="ui-icon-pencil" update=":protocoloUpdateDialogForm" onclick="protocoloUpdateDialogWidget.show();" >
+							<f:setPropertyActionListener target="#{protocoloMB.protocolo}" value="#{protocolo}" />
+						</p:commandButton>
+						<p:spacer width="10px" />
+						<p:commandButton value="#{bundle.delete}" icon="ui-icon-trash" update=":protocoloDeleteDialogForm" onclick="protocoloDeleteDialogWidget.show();" >
+							<f:setPropertyActionListener target="#{protocoloMB.protocolo}" value="#{protocolo}" />
+						</p:commandButton>
+					</p:column>
+
+				</p:dataTable>
+				<p:commandButton value="#{bundle.create} #{bundle.protocolo}" icon="ui-icon-plus" update=":protocoloCreateDialogForm"
+					actionListener="#{protocoloMB.resetProtocolo()}" onclick="protocoloCreateDialogWidget.show();" />
+			</h:form>
+
+			<ui:include src="/pages/protected/protocolo/dialogs/protocoloCreateDialog.xhtml" />
+			<ui:include src="/pages/protected/protocolo/dialogs/protocoloDetailDialog.xhtml" />
+			<ui:include src="/pages/protected/protocolo/dialogs/protocoloUpdateDialog.xhtml" />
+			<ui:include src="/pages/protected/protocolo/dialogs/protocoloDeleteDialog.xhtml" />
+		</ui:define>
+	</ui:composition>
+</h:body>
+</html>
