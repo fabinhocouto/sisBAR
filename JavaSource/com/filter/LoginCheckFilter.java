@@ -28,14 +28,14 @@ public class LoginCheckFilter extends AbstractFilter implements Filter {
 		if(allowedURIs == null){
 			allowedURIs = new ArrayList<String>();
 			allowedURIs.add(fConfig.getInitParameter("loginActionURI"));
-			allowedURIs.add("/JSFCrudApp/javax.faces.resource/main.css.xhtml");
-			allowedURIs.add("/JSFCrudApp/javax.faces.resource/theme.css.xhtml");
-			allowedURIs.add("/JSFCrudApp/javax.faces.resource/primefaces.js.xhtml");
-			allowedURIs.add("/JSFCrudApp/javax.faces.resource/primefaces.css.xhtml");
-			allowedURIs.add("/JSFCrudApp/javax.faces.resource/jquery/jquery.js.xhtml");
-			allowedURIs.add("/JSFCrudApp/javax.faces.resource/messages/messages.png.xhtml");
-			allowedURIs.add("/JSFCrudApp/javax.faces.resource/images/ui-icons_2e83ff_256x240.png.xhtml");
-			allowedURIs.add("/JSFCrudApp/javax.faces.resource/images/ui-icons_38667f_256x240.png.xhtml");
+			allowedURIs.add("/sisBAR/javax.faces.resource/main.css.xhtml");
+			allowedURIs.add("/sisBAR/javax.faces.resource/theme.css.xhtml");
+			allowedURIs.add("/sisBAR/javax.faces.resource/primefaces.js.xhtml");
+			allowedURIs.add("/sisBAR/javax.faces.resource/primefaces.css.xhtml");
+			allowedURIs.add("/sisBAR/javax.faces.resource/jquery/jquery.js.xhtml");
+			allowedURIs.add("/sisBAR/javax.faces.resource/messages/messages.png.xhtml");
+			allowedURIs.add("/sisBAR/javax.faces.resource/images/ui-icons_2e83ff_256x240.png.xhtml");
+			allowedURIs.add("/sisBAR/javax.faces.resource/images/ui-icons_38667f_256x240.png.xhtml");
 		}
 	}
 

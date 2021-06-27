@@ -35,12 +35,12 @@ public class PersonMB extends AbstractMB implements Serializable {
 		try {
 			getPersonFacade().createPerson(person);
 			closeDialog();
-			displayInfoMessageToUser("Created With Sucess");
+			displayInfoMessageToUser("Usuário criado com sucesso.");
 			loadPersons();
 			resetPerson();
 		} catch (Exception e) {
 			keepDialogOpen();
-			displayErrorMessageToUser("Ops, we could not create. Try again later");
+			displayErrorMessageToUser("Erro ao tentar criar usuário.");
 			e.printStackTrace();
 		}
 	}
@@ -49,12 +49,12 @@ public class PersonMB extends AbstractMB implements Serializable {
 		try {
 			getPersonFacade().updatePerson(person);
 			closeDialog();
-			displayInfoMessageToUser("Updated With Sucess");
+			displayInfoMessageToUser("Usuário atualizado com sucesso.");
 			loadPersons();
 			resetPerson();
 		} catch (Exception e) {
 			keepDialogOpen();
-			displayErrorMessageToUser("Ops, we could not create. Try again later");
+			displayErrorMessageToUser("Erro ao tentar atualizar usuário.");
 			e.printStackTrace();
 		}
 	}
@@ -63,51 +63,14 @@ public class PersonMB extends AbstractMB implements Serializable {
 		try {
 			getPersonFacade().deletePerson(person);
 			closeDialog();
-			displayInfoMessageToUser("Deleted With Sucess");
+			displayInfoMessageToUser("Usuário excluído com sucesso.");
 			loadPersons();
 			resetPerson();
 		} catch (Exception e) {
 			keepDialogOpen();
-			displayErrorMessageToUser("Ops, we could not create. Try again later");
+			displayErrorMessageToUser("Erro ao tentar excluir usuário.");
 			e.printStackTrace();
 		}
-	}
-
-	public void addDogToPerson() {
-		try {
-			getPersonFacade().addDogToPerson(dog.getId(), personWithDogs.getId());
-			closeDialog();
-			displayInfoMessageToUser("Added With Sucess");
-			reloadPersonWithDogs();
-			resetDog();
-		} catch (Exception e) {
-			keepDialogOpen();
-			displayErrorMessageToUser("Ops, we could not create. Try again later");
-			e.printStackTrace();
-		}
-	}
-
-	public void removeDogFromPerson() {
-		try {
-			getPersonFacade().removeDogFromPerson(dog.getId(), personWithDogs.getId());
-			closeDialog();
-			displayInfoMessageToUser("Removed With Sucess");
-			reloadPersonWithDogs();
-			resetDog();
-		} catch (Exception e) {
-			keepDialogOpen();
-			displayErrorMessageToUser("Ops, we could not create. Try again later");
-			e.printStackTrace();
-		}
-	}
-
-	public Person getPersonWithDogs() {
-		if (personWithDogs == null) {
-			person = (Person) ELFlash.getFlash().get(SELECTED_PERSON);
-			personWithDogs = getPersonFacade().findPersonWithAllDogs(person.getId());
-		}
-
-		return personWithDogs;
 	}
 
 	public void setPersonWithDogsForDetail(Person person) {

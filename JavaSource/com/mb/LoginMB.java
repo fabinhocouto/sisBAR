@@ -47,7 +47,7 @@ public class LoginMB extends AbstractMB {
 			return "/pages/protected/index.xhtml";
 		}
 
-		displayErrorMessageToUser("Check your email/password");
+		displayErrorMessageToUser("Usuário ou senha incorreto.");
 		
 		return null;
 	}

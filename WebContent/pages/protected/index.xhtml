@@ -4,8 +4,29 @@
 <h:body>
 	<ui:composition template="/pages/protected/templates/master.xhtml">
 		<ui:define name="divMain">
-			#{bundle.welcomeMessage} :<br/>
-			<h:graphicImage library="images" name="logoReal.png" />
+			<div align="center">
+				<table>
+					<tr>
+					<h:graphicImage library="images" name="brasao.png" />
+					</tr>
+				</table>
+				<table>
+					<tr>
+					<div id="title" class="pull-left">
+						<span id="portal-title-1">
+                         	Ministério da Defesa
+                        </span>
+        				<h1 class="site-title">
+        			    		<span class="nome-principal" title="Exército Brasileiro">Exército Brasileiro</span>
+    					</h1>
+						<h2 id="portal-description">
+                        	Braço Forte - Mão Amiga
+                        </h2>
+					</div>
+					</tr>
+				</table>
+			</div>
+			
 		</ui:define>	
 	</ui:composition>
 </h:body>

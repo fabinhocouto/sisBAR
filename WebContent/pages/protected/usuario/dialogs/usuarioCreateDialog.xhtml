@@ -5,13 +5,13 @@
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <h:body>
-	<p:dialog widgetVar="personCreateDialogWidget"
-		id="personCreateDialogId" height="150" width="500" modal="true"
+	<p:dialog widgetVar="usuarioCreateDialogWidget"
+		id="usuarioCreateDialogId" height="150" width="500" modal="true"
 		closable="true" draggable="false" resizable="false">
-		<h:form id="personCreateDialogForm" prependId="false">
+		<h:form id="usuarioCreateDialogForm" prependId="false">
 			<h:panelGrid columns="2">
 				<h:outputText value="* #{bundle.usuarioNome}" />
-				<h:inputText value="#{personMB.person.name}" required="true" label="#{bundle.personName}" />
+				<h:inputText value="#{usuarioMB.user.name}" required="true" label="#{bundle.personName}" />
 				
 		
 				<p:commandButton value="#{bundle.criar}" icon="ui-icon-plus"

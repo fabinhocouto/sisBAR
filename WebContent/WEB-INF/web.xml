@@ -51,4 +51,9 @@
 		<filter-name>DefaultUserPagesFilter</filter-name>
 		<url-pattern>/pages/protected/defaultUser/*</url-pattern>
 	</filter-mapping> 
+	
+	<error-page>
+	    <exception-type>javax.faces.application.ViewExpiredException</exception-type>
+	    <location>/pages/public/login.xhtml</location>
+	</error-page>
 </web-app>

@@ -8,7 +8,7 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v8.5"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/antlr-2.7.6.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/cglib-2.2.2.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/common-annotations.jar"/>
@@ -32,5 +32,8 @@
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/slf4j-log4j12-1.6.1.jar"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="lib" path="C:/Users/fabin/Downloads/primefaces-10.0.0.jar"/>
+	<classpathentry kind="lib" path="D:/Desenvolvimento/eb/sisBAR/WebContent/WEB-INF/lib/jsch-0.1.55.jar"/>
+	<classpathentry kind="lib" path="D:/Desenvolvimento/eb/commons-net-3.8.0.jar"/>
+	<classpathentry kind="lib" path="D:/Desenvolvimento/eb/jsch-0.1.55.jar"/>
 	<classpathentry kind="output" path="WebContent/WEB-INF/classes"/>
 </classpath>
